@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>POS Software Archive</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f3f3f3;
+            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #20252b;
+            color: white;
+            border-bottom: 3px solid #3d7edb;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-name {
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .site-name span {
+            color: #aaa;
+            font-weight: normal;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* MAIN */
+
+        main {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 25px;
+        }
+
+        .intro {
+            background: white;
+            border: 1px solid #d6d6d6;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .intro h1 {
+            margin: 0 0 8px;
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        .intro p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* SEARCH */
+
+        .search-box {
+            margin-top: 20px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 11px 13px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #3d7edb;
+        }
+
+        /* CATEGORY */
+
+        .category {
+            margin-bottom: 30px;
+        }
+
+        .category-title {
+            background: #e4e4e4;
+            border: 1px solid #d0d0d0;
+            padding: 12px 15px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .category-subtitle {
+            float: right;
+            font-size: 12px;
+            color: #777;
+            font-weight: normal;
+            margin-top: 2px;
+        }
+
+        /* SOFTWARE */
+
+        .software-list {
+            background: white;
+            border: 1px solid #d6d6d6;
+            border-top: none;
+        }
+
+        .software {
+            padding: 18px;
+            border-bottom: 1px solid #e2e2e2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .software:last-child {
+            border-bottom: none;
+        }
+
+        .software:hover {
+            background: #fafafa;
+        }
+
+        .software-info {
+            flex: 1;
+        }
+
+        .software-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .software-description {
+            font-size: 13px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .software-meta {
+            margin-top: 8px;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .download {
+            background: #3d7edb;
+            color: white;
+            text-decoration: none;
+            padding: 9px 16px;
+            font-size: 13px;
+            border: 1px solid #326bbd;
+            white-space: nowrap;
+        }
+
+        .download:hover {
+            background: #326bbd;
+        }
+
+        /* NOTICE */
+
+        .notice {
+            background: #fff8e6;
+            border: 1px solid #e5d49c;
+            padding: 16px;
+            font-size: 12px;
+            color: #6d5b25;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .notice strong {
+            display: block;
+            color: #514315;
+            margin-bottom: 4px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #20252b;
+            color: #999;
+            padding: 25px;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 50px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+
+            .header-inner {
+                display: block;
+            }
+
+            nav {
+                margin-top: 12px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 18px;
+            }
+
+            .software {
+                display: block;
+            }
+
+            .download {
+                display: inline-block;
+                margin-top: 14px;
+            }
+
+            .category-subtitle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="site-name">
+            POS Software <span>Archive</span>
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="intro">
+
+        <h1>POS Software Archive</h1>
+
+        <p>
+            A collection of POS software, installers, utilities, drivers,
+            and other related files.
+        </p>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="search"
+                placeholder="Search the archive..."
+                onkeyup="searchSoftware()"
+            >
+        </div>
+
+    </section>
+
+
+    <!-- NCR ALOHA -->
+
+    <section class="category">
+
+        <div class="category-title">
+            NCR Aloha
+            <span class="category-subtitle">POS Software</span>
+        </div>
+
+        <div class="software-list">
+
+            <div class="software">
+
+                <div class="software-info">
+
+                    <div class="software-name">
+                        Aloha POS
+                    </div>
+
+                    <div class="software-description">
+                        NCR Aloha POS installation files and related software.
+                    </div>
+
+                    <div class="software-meta">
+                        Windows · Installer
+                    </div>
+
+                </div>
+
+                <a class="download" href="downloads/aloha/">
+                    Browse
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEWPOS -->
+
+    <section class="category">
+
+        <div class="category-title">
+            NewPOS
+            <span class="category-subtitle">POS Software</span>
+        </div>
+
+        <div class="software-list">
+
+            <div class="software">
+
+                <div class="software-info">
+
+                    <div class="software-name">
+                        NewPOS
+                    </div>
+
+                    <div class="software-description">
+                        NewPOS installers, utilities, and supporting files.
+                    </div>
+
+                    <div class="software-meta">
+                        Windows · Installer
+                    </div>
+
+                </div>
+
+                <a class="download" href="downloads/newpos/">
+                    Browse
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SPEEDLINE -->
+
+    <section class="category">
+
+        <div class="category-title">
+            SpeedLine
+            <span class="category-subtitle">POS Software</span>
+        </div>
+
+        <div class="software-list">
+
+            <div class="software">
+
+                <div class="software-info">
+
+                    <div class="software-name">
+                        SpeedLine
+                    </div>
+
+                    <div class="software-description">
+                        SpeedLine POS software and supporting components.
+                    </div>
+
+                    <div class="software-meta">
+                        Windows · Installer
+                    </div>
+
+                </div>
+
+                <a class="download" href="downloads/speedline/">
+                    Browse
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISC -->
+
+    <section class="category">
+
+        <div class="category-title">
+            Miscellaneous
+            <span class="category-subtitle">Tools & Utilities</span>
+        </div>
+
+        <div class="software-list">
+
+            <div class="software">
+
+                <div class="software-info">
+
+                    <div class="software-name">
+                        POS Utilities
+                    </div>
+
+                    <div class="software-description">
+                        Drivers, utilities, configuration tools, documentation,
+                        and other POS-related files.
+                    </div>
+
+                    <div class="software-meta">
+                        Various · Utilities
+                    </div>
+
+                </div>
+
+                <a class="download" href="downloads/misc/">
+                    Browse
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOTICE -->
+
+    <div class="notice">
+
+        <strong>Important Notice</strong>
+
+        Some software in this archive may be proprietary or subject to
+        licensing restrictions. Only download, install, or use software
+        that you are legally authorized to access and use. This website
+        does not grant any third-party software licenses.
+
+    </div>
+
+</main>
+
+
+<footer>
+    POS Software Archive · 2026
+</footer>
+
+
+<script>
+
+function searchSoftware() {
+
+    const search =
+        document.getElementById("search").value.toLowerCase();
+
+    const software =
+        document.querySelectorAll(".software");
+
+    software.forEach(function(item) {
+
+        const text =
+            item.innerText.toLowerCase();
+
+        if (text.includes(search)) {
+            item.style.display = "";
+        } else {
+            item.style.display = "none";
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
